@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --bg-color:#0f172a;
+    --text-color:#f8fafc;
+    --accent-primary:#8b5cf6;
+    --accent-secondary:#06b6d4;
+    --glass-bf:rgb(255,255,255, 0.05);
+    --glass-border:rgb(255,255,255,0.1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    background: var(--bg-color);
+    color:var(--text-color);
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: #5cd7f6;
+    background-clip:text;
+    --webkit-text-fill-color:transparent;
+    text-decoration: none;
+}
+
+h1, h2, h3{
+    font-weight: 600;
+    margin-bottom:1rem;
+    color: var(--text-color);
+    background-clip: text;
+}
+
+p{
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom:1.5rem;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding:2rem 5%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    min-height: calc(100vh - 80vh);
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:1.5rem;
+}
+
+.hero p{
+    font-size: 3.5rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid var(--glass-border);
+    background:rgba(92, 124, 194,0);
+    backdrop-filter:blur(7px);
+    position: sticky;
+    top:0;
+    z-index: 100;
+    box-shadow: 0 8px 50px rgba(255,38,0);
+}
+
+.nav-link{
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.1s ease;
+}
+
+.nav-link a:hover{
+    color: var(--accent-secondary);
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.btn-primary{
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: rgb(250, 250, 250);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    background-color: var(--accent-secondary);
+}
+
+.btn-primary:hover{
+    transform: translate(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.auth-buttons a, .auth-buttons button{
+    margin-left: 1rem;
+}
