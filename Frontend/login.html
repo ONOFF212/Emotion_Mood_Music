@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Log IN | Aura</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <nav>
+            <a href="index.html" class="logo">Aura</a>
+            <div class="auth-buttons">
+                <a href="signup.html" class="btn btn-primary">SignUP</a>
+            </div>
+        </nav>
+
+        <div class="container auth-container">
+            <div class="glass-panel_login_signup auth-card">
+                <h2>Welcome Back</h2>
+                <p>Log In to continue to Aura</p>
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" >LogIn</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;" >
+                    Don't have an account? <a href="signup.html" style="color: var(--accent-secondary); text-decoration: none;">Sign Up</a></p>
+            </div>
+        </div>
+    </body>
+</html>
