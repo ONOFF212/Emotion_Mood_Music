@@ -1,0 +1,41 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Aura</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Aura</a>
+        <div class="nav-links">
+            <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+            <a href="history.html" class="btn">History</a>
+            <a href="profile.html" class="btn btn-primary">Profile</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 style="margin-bottom: 2rem;">Discover your Mood</h2>
+        <div class="dashboard-grid">
+            <div class="glass-panel">
+            <h3>Capture Emotion</h3>
+            <p>Look at the camera and snap a photo to get a music recommendation</p>
+                <div class="camera-container">
+                    <video id="webcam" autoplay playsinline></video>
+                    <img id="snapshot" class="hidden" alt="Captured Emotion">
+                </div>
+                <div class="camera-controls">
+                    <button id="class-capture" class="btn">Captured</button>
+                    <button id="class-Retake" class="btn">Retake</button>
+                    <button id="class-Analyze" class="btn">Analyze</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
