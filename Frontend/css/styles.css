@@ -50,7 +50,7 @@ p{
 }
 
 .container{
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding:2rem 5%;
     flex: 1;
@@ -150,7 +150,34 @@ nav{
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 2rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 50px rgb(95, 255, 2);
+}
+
+.glass-panel_ytvideo{
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0px 10px 50px rgb(255, 2, 150);
+}
+
+.glass-panel_profile{
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 2px 4px 30px rgb(35, 192, 240);
+}
+
+.glass-panel_proflie_detail_emotion{
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 2px 4px 30px rgb(221, 2, 250);
 }
 
 .glass-panel_login_signup{
@@ -188,4 +215,89 @@ nav{
     outline: none;
     border-color: var(--accent-primary);
     box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media(max-width: 768px){
+    .dashboard-grid{
+        grid-template-columns: 1fr;
+    }
+}
+.camera-container{
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hdiden;
+    border:solid rgb(4, 0, 255) 2px;
+    aspect-ratio: 4/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#webcam, #snapshot{
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+}
+
+.camera-control{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.music-recommendation{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.video-container{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.loader{
+    display: none;
+    width: 48px;
+    height: 48px;
+    border:5px solid var(--glass-bg);
+    border-bottom-color: var(--accent-primary);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes rotation{
+    0%{transform:rotate(0deg)}
+    100%{transform: rotate(360deg);}
+}
+
+
+.hidden{
+    display: none !important;
 }

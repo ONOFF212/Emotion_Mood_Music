@@ -18,7 +18,7 @@ class API{
     }
 
     static async request(endpoint, options = {}) {
-        const url = `${BASE_URL}/${endpoint}`;
+        const url = `${BASE_URL}${endpoint}`;
 
         try{
             const response = await fetch(url, options);
