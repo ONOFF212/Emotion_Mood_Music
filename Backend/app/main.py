@@ -5,6 +5,8 @@ from fastapi.responses import HTMLResponse, FileResponse
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 
+from app.api import auth 
+
 app = FastAPI()
 
 origins = [
@@ -31,6 +33,7 @@ FRONTEND_DIR = BASE_DIR / "Frontend"
 
 app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="Frontend")
 
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 
 @app.get("/")
 def root():

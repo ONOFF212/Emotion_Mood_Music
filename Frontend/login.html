@@ -31,6 +31,7 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" required>
                     </div>
+                    <div id="login-error"  class="login-error"></div>
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" >LogIn</button>
                 </form>
 
@@ -39,5 +40,23 @@
                 </p>
             </div>
         </div>
+
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script>
+            document.getElementById('login-form').addEventListener('submit', async (e) =>{
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const errorE1 = document.getElementById('login-error');
+
+                const response = await Auth.login(username, password);
+                if(response){
+                    window.location.href = 'dashboard.html';
+                } else{
+                    errorE1.innerText = "Invalid username or password";
+                }
+            });
+        </script>
     </body>
 </html>
