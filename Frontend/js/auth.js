@@ -19,10 +19,27 @@ class Auth{
             if(!response.ok) {
                 throw new Error('Login Failed');
             }
+            const data = await response.json();
+            localStorage.setItem('aura_token', data.access_token);
             return true;
         } catch(error){
             console.error("Login Error:", error);
             return false;
+        }
+    }
+
+    static logout(){
+        localStorage.removeItem('aura_token');
+        window.location.href= 'index.html';
+    }
+
+    static isAuthenticated(){
+        return !!localStorage.getItem('aura_token');
+    }
+
+    static requireAuth(){
+        if(!this.isAuthenticated()){
+            window.location.href = 'login.html';
         }
     }
 }

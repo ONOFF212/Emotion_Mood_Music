@@ -124,7 +124,7 @@ nav{
 }
 
 .btn-primary:hover{
-    transform: translate(-2px);
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
 
@@ -150,6 +150,8 @@ nav{
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 2rem;
+    width: 350px;
+    height: 500px;
     box-shadow: 0px 10px 50px rgb(95, 255, 2);
 }
 
@@ -159,6 +161,7 @@ nav{
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 2rem;
+    width: 900px;
     box-shadow: 0px 10px 50px rgb(255, 2, 150);
 }
 
@@ -234,8 +237,9 @@ nav{
 .camera-container{
     position: relative;
     width: 100%;
+    height: 280px;
     border-radius: 12px;
-    overflow: hdiden;
+    overflow: hidden;
     border:solid rgb(4, 0, 255) 2px;
     aspect-ratio: 4/3;
     display: flex;
@@ -244,18 +248,19 @@ nav{
 }
 
 #webcam, #snapshot{
-    width: 80%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
-.camera-control{
+.camera-controls{
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 20px;
     align-items: center;
+    bottom: 4px;
 }
 
 .music-recommendation{
