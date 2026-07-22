@@ -169,6 +169,7 @@ nav{
     padding: 2rem;
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 2px 4px 30px rgb(35, 192, 240);
+    border-radius: 16px;
 }
 
 .glass-panel_proflie_detail_emotion{
@@ -178,6 +179,7 @@ nav{
     padding: 2rem;
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 2px 4px 30px rgb(221, 2, 250);
+    border-radius: 16px;
 }
 
 .glass-panel_login_signup{
