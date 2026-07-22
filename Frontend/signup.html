@@ -62,6 +62,11 @@
                     const response = await API.post('/api/auth/signup', {
                         username, email, password
                     });
+
+                    const success = await Auth.login(username, password);
+                    if(success) {
+                        window.location.href = 'dashboard.html';
+                    }
                 } catch(err) {
                     errorE1.innerText = err.message || "signup failed. Username or email might be taken";
                 }

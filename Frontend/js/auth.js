@@ -19,6 +19,7 @@ class Auth{
             if(!response.ok) {
                 throw new Error('Login Failed');
             }
+            return true;
         } catch(error){
             console.error("Login Error:", error);
             return false;

@@ -31,9 +31,11 @@ app.add_middleware(
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 FRONTEND_DIR = BASE_DIR / "Frontend"
 
-app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="Frontend")
 
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+
+app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="Frontend")
+
 
 @app.get("/")
 def root():
