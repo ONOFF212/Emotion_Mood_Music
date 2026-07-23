@@ -48,13 +48,17 @@
                 e.preventDefault();
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;
-                const errorE1 = document.getElementById('login-error');
+                const errorEl = document.getElementById('login-error');
 
-                const response = await Auth.login(username, password);
-                if(response){
+                errorEl.style.display = 'none';
+                
+
+                const success = await Auth.login(username, password);
+                if(success){
                     window.location.href = 'dashboard.html';
                 } else{
-                    errorE1.innerText = "Invalid username or password";
+                    errorEl.innerText = "Invalid username or password";
+                    errorEl.style.display = 'block';
                 }
             });
         </script>

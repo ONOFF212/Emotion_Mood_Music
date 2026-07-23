@@ -17,7 +17,7 @@ class API{
         return headers;
     }
 
-    static async request(endpoint, options = {}) {
+    static async request(endpoint, options = {}, retry = false) {
         const url = `${BASE_URL}${endpoint}`;
 
         try{
@@ -29,7 +29,7 @@ class API{
                 return null;
             }
             if(!response.ok){
-                console.errorData = await response.json().catch(() => ({}));
+                const errorData = await response.json().catch(() => ({}));
                 throw new Error(errorData.detail || 'API Request Failed');
             }
             return await response.json();
@@ -49,7 +49,7 @@ class API{
     static async post(endpoint, data, includeAuth = true){
         return this.request(endpoint, {
             method:'POST',
-            Headers: this.getHeaders(includeAuth),
+            headers: this.getHeaders(includeAuth),
             body:JSON.stringify(data)
         });
     }

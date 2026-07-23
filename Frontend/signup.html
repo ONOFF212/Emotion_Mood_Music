@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Log IN | Aura</title>
+        <title>Sign-Up | Aura</title>
         <link rel="stylesheet" href="css/styles.css">
     </head>
 
@@ -56,7 +56,7 @@
                 const username = document.getElementById('username').value;
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
-                const errorE1 = document.getElementById('signup-error');
+                const errorEl = document.getElementById('signup-error');
 
                 try{
                     const response = await API.post('api/auth/signup', {
@@ -68,8 +68,8 @@
                         window.location.href = 'dashboard.html';
                     }
                 } catch(err) {
-                    errorE1.innerText = err.message || "signup failed. Username or email might be taken";
-                    errorE1.style.display = 'block';
+                    errorEl.innerText = err.message || "signup failed. Username or email might be taken";
+                    errorEl.style.display = 'block';
                 }
             });
         </script>

@@ -32,7 +32,7 @@ body{
     font-weight: 700;
     background-color: #5cd7f6;
     background-clip:text;
-    --webkit-text-fill-color:transparent;
+    -webkit-text-fill-color:transparent;
     text-decoration: none;
 }
 
@@ -50,6 +50,17 @@ p{
 }
 
 .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:2rem 5%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-dashboard{
     max-width: 1200px;
     margin: 0 auto;
     padding:2rem 5%;
@@ -79,6 +90,7 @@ p{
 }
 
 nav{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,6 +177,16 @@ nav{
     box-shadow: 0px 10px 50px rgb(255, 2, 150);
 }
 
+.glass-panel_playList{
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 350px;
+    box-shadow: 0px 10px 30px rgb(2, 61, 255);
+}
+
 .glass-panel_profile{
     background-color: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -224,6 +246,19 @@ nav{
 
 .dashboard-grid{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media(max-width: 768px){
+    .dashboard-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+.dashboard-grid-profile{
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
@@ -234,6 +269,7 @@ nav{
         grid-template-columns: 1fr;
     }
 }
+
 .camera-container{
     position: relative;
     width: 100%;
@@ -304,6 +340,34 @@ iframe{
     100%{transform: rotate(360deg);}
 }
 
+.nextSong{
+    width: 30%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: rgb(0, 0, 0);
+    border: 3px solid var(--accent-primary);
+    font-size: 1rem;
+    transition: all 1s ease;
+    color: var(--text-color);
+    animation:move 3s linear infinite;
+}
+
+@keyframes move{
+    0%{ transform: translateX(0);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.emotion-badge{
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent-primary);
+    color: white;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
 
 .hidden{
     display: none !important;
