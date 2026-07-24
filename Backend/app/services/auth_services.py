@@ -37,3 +37,21 @@ def create_access(data:dict, expire_delta: Optional[timedelta] =  None):
     return encode_jwt
 
 
+def get_current_user(token:str = Depends(oauth2_scheme), db:Session=Depends(get_db)):
+    credential_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"www-Authenticate": "Bearer"},
+    )
+
+    try:
+        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        username:str = payload.get("sub")
+        if username is None:
+            return credential_exception
+    except:
+        raise credential_exception
+    user = user_repo.get_user_by_name(db, username=username)
+    if user is None:
+        raise credential_exception
+    return user

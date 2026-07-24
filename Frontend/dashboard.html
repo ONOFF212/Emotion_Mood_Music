@@ -24,6 +24,14 @@
             <div class="glass-panel">
             <h3>Capture Emotion</h3>
             <p>Look at the camera and snap a photo to get a music recommendation</p>
+            <div class="language-selection">
+                    <label for="language">Choose Language:</label>
+                    <select id="language">
+                        <option value="Nepali">Nepali</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
                 <div class="camera-container">
                     <video id="webcam" autoplay playsinline></video>
                     <img id="snapshot" class="hidden" alt="Captured Emotion">
@@ -39,23 +47,24 @@
                 <h3>Your SoundTrack</h3>
                 <div id="loader" class="loader"></div>
                 <div id="music-result" class="music-recommendation hidden">
-                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Detcted Emotion:</h4>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Detcted Emotion:<span id="detected-emotion" class="emotion-badge"></span></h4>
+                    <p id="track-title" style="color: var(--text-color); font-weight: 500;"></p>
 
                     <div class="video-container">
-                        <iframe id="youtube-player" src="",  allowfullscreen></iframe>
+                        <iframe id="youtube-player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>
                     </div>
                 </div>
-                <div id="empty-states" class="music-recommendation">
+                <div id="empty-state" class="music-recommendation">
                     <p>Capture a photo to see your personalized music recommendation here</p>
-                    <button class="nextSong">Next Song</button>
+                    
                 </div>
                 
             </div>
 
             <div id="playList" class="glass-panel_playList">
                 <h3>Recommened Songs Playlist</h3>
-                <div>
-                    <p>...</p>
+                <div id="playlist-items">
+                    <p>No songs yet</p>
                 </div>
 
             </div>
