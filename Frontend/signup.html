@@ -59,7 +59,7 @@
                 const errorEl = document.getElementById('signup-error');
 
                 try{
-                    const response = await API.post('api/auth/signup', {
+                    const response = await API.post('/api/auth/signup', {
                         username, email, password
                     });
 

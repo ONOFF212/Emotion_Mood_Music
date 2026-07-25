@@ -5,7 +5,12 @@ from fastapi.responses import HTMLResponse, FileResponse
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 
+from app.db.session import engine
+from app.model import user_model
+
 from app.api import auth , emotion , profile , history
+
+user_model.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
