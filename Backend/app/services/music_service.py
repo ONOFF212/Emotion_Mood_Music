@@ -5,17 +5,19 @@ import random
 
 EMOTION_QUERY_MAP = {
     "happy": [
+        "happy songs",
         "Melody", "Viral Melody",
         "Romantic", "viral Romantic",
         "Romantic Remix",
-        "Mashup", 
-        "Cover", "old Song"
+        "Mashup",  "offical video",
+        "Cover", "old Songs"
     ],
 
-    "sad": [
-        "Sad", "viral sad",
+    "sad": [ 
+        "sad songs",
+        "viral sad songs",
         "Lo-fi",
-        "Acoustic",
+        "Acoustic","official songs",
         "Sufi",
         "Classical"
     ],
@@ -23,37 +25,37 @@ EMOTION_QUERY_MAP = {
     "angry": [
         "Rap / Hip-Hop",
         "EDM",
-        "Remix"
+        "Remix","official video"
     ],
 
     "neutral": [
-        "Remix",
-        "Melody",
-        "Mashup",
-        "slowed-reverb", "bgm", "old song"
+        "Remix songs",
+        "Melody songs",
+        "Mashup songs", "official songs",
+        "slowed-reverb songs", "bgm", "old songs"
     ],
 
     "fear": [
-        "Classical",
-        "Lo-fi",
-        "Sufi",
+        "Classical songs",
+        "Lo-fi songs",
+        "Sufi","official songs",
         "Acoustic"
     ],
 
     "surprise": [
-        "Mashup",
-        "Remix",
-        "EDM",
-        "Cover",
-        "Melody"
+        "Mashup songs",
+        "Remix songs",
+        "EDM",  "official songs",
+        "Cover songs",
+        "Melody songs"
     ],
 
     "disgust": [
-        "Acoustic",
-        "Classical",
-        "Melody",
-        "Cover",
-        "Lo-fi"
+        "Acoustic songs",
+        "Classical sogns",  "official songs",
+        "Melody songs",
+        "Cover songs",
+        "Lo-fi songs"
     ]
 }
 
