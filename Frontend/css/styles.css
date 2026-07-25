@@ -34,6 +34,21 @@ body{
     background-clip:text;
     -webkit-text-fill-color:transparent;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight:700;
+    border: 2px solid #5cd7f6;
+    padding: 3px;
+    background-color: #fff;
 }
 
 h1, h2, h3{
