@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse, FileResponse
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 
-from app.api import auth , emotion , profile
+from app.api import auth , emotion , profile , history
 
 app = FastAPI()
 
@@ -30,12 +30,14 @@ app.add_middleware(
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 FRONTEND_DIR = BASE_DIR / "Frontend"
-
+UPLOAD_DIR = Path(__file__).resolve().parent.parent / "Image_Folder"
 
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(emotion.router, prefix="/api/emotion", tags=["emotion"])
 app.include_router(profile.router, prefix="/api/profile", tags=["profile"])
+app.include_router(history.router, prefix="/api/history", tags=["history"])
 
+app.mount("/Image_Folder", StaticFiles(directory=UPLOAD_DIR), name="Image_Folder")
 
 app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="Frontend")
 

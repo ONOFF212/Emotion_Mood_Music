@@ -54,12 +54,13 @@ async def detect_emotion_base64(request:base64ImageRequest, db: Session = Depend
 
     first_song = music_recommendation["videos"][0]
 
+    image_url = f"/Image_Folder/{filename}"
     history_create = HistoryCreate(
         emotion = detected_emotion,
         yt_title=first_song['title'],
         yt_video_id=first_song['video_id'],
         yt_embed_url=first_song['embed_url'],
-        image_path=filepath
+        image_path=image_url
     )
 
     
