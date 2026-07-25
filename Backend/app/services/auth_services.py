@@ -7,7 +7,7 @@ from app.core.config import settings
 from app.db.session import get_db
 import app.repository.user_repo as user_repo
 
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, status, exceptions
 from fastapi.security import OAuth2PasswordBearer
 from typing import Optional
 import jwt
@@ -48,8 +48,9 @@ def get_current_user(token:str = Depends(oauth2_scheme), db:Session=Depends(get_
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         username:str = payload.get("sub")
         if username is None:
-            return credential_exception
-    except:
+            raise credential_exception
+    except Exception as e:
+        print("Jwt Erro:", e)
         raise credential_exception
     user = user_repo.get_user_by_name(db, username=username)
     if user is None:

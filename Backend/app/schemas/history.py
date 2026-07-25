@@ -31,3 +31,12 @@ class EmotionResponse(BaseModel):
     emotion: str
     videos: List[VideoRecommendation]
     history: HistoryOut
+
+class EmotionSummary(BaseModel):
+    Happy: float = 0
+    Sad: float = 0
+    Angry: float = 0
+    Neutral: float = 0
+    Fear: float = 0
+    Surprise: float = 0
+    Disgust: float = 0

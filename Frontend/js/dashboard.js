@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', async() => {
 
+    Auth.requireAuth();
     const camera = new Camera();
     try{
         await camera.init();

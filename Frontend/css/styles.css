@@ -242,6 +242,12 @@ nav{
     border-radius: 16px;
 }
 
+#logout_btn{
+    margin-top: auto;
+    width: 100%;
+}
+
+
 .glass-panel_proflie_detail_emotion{
     background-color: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -381,7 +387,7 @@ iframe{
     border:5px solid var(--glass-bg);
     border-bottom-color: var(--accent-primary);
     border-radius: 50%;
-    display: inline-block;
+    
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
     margin: 2rem auto;

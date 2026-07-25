@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse, FileResponse
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 
-from app.api import auth , emotion
+from app.api import auth , emotion , profile
 
 app = FastAPI()
 
@@ -34,6 +34,8 @@ FRONTEND_DIR = BASE_DIR / "Frontend"
 
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(emotion.router, prefix="/api/emotion", tags=["emotion"])
+app.include_router(profile.router, prefix="/api/profile", tags=["profile"])
+
 
 app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="Frontend")
 

@@ -18,7 +18,7 @@ class UserOut(userDetail):
     id:int
     created_at:datetime
 
-    class config:
+    class Config:
         from_attributes = True
 
 class Token(BaseModel):

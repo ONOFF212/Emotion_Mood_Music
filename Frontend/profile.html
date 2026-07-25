@@ -28,30 +28,56 @@
                 
                 <div class="glass-panel_profile">
                     <h1>Your Profile</h1>
-                    <div class="hloader">
-                        <div class="profile_id ">
-                            <div>
-                                <p>Username</p>
-                                <h3>...</h3>
+                    <div class="loader " id="loader"></div>
+                        <div id="profile_id" class="hidden">
+                            <div style="margin-bottom: 1.5rem;">
+                                <p style="margin-bottom: 0.5rem; color: #cbd5e1; font-size: 0.9rem;">Username</p>
+                                <h3 id="proof-username" style="margin-bottom: 0; color: var(--text-color);">...</h3>
                             </div>
-                            <div>
-                                <p>Email</p>
-                                <h3>...</h3>
+                            <div style="margin-bottom: 1.5rem;">
+                                <p style="margin-bottom: 0.5rem; color: #cbd5e1; font-size: 0.9rem;">Email</p>
+                                <h3 id="proof-email" style="margin-bottom: 0; color: var(--text-color);">...</h3>
                             </div>
-                            <div>
-                                <p>Member Since</p>
-                                <h3>...</h3>
+                            <div style="margin-bottom: 1.5rem;">
+                                <p style="margin-bottom: 0.5rem; color: #cbd5e1; font-size: 0.9rem;">Member Since</p>
+                                <h3 id="proof-joined" style="margin-bottom: 0; color: var(--text-color);">...</h3>
                             </div>
+                            <button id="logout_btn" class="btn btn-outline" style="width: 100%;  border-color: var(--error-color); color: red;">Log Out</button>                        
                         </div>
-                    </div>
+        
                 </div>
                 <div class="glass-panel_proflie_detail_emotion">
-                    <div class="hloader">
-                        <p>Maximum Emotion That you have</p>
-                        <h3>...</h3>
+                    <div  id="emotion-loader">
+                        <h3>Emotion Statistics</h3>
+                        <div class="emotion-row">
+                            <p>Happy:<span id="happy-percent">0%</span></p>
+                        </div>
+                        <div>
+                            <p>Sad:<span id="sad-percent">0%</span></p>
+                        </div>
+                        <div>
+                            <p>Angry:<span id="angry-percent">0%</span></p>
+                        </div>
+                        <div>
+                            <p>Neutral:<span id="neutral-percent">0%</span></p>
+                        </div>
+                        <div>
+                            <p>Fear:<span id="fear-percent">0%</span></p>
+                        </div>
+                        <div>
+                            <p>Surprise:<span id="surprise-percent">0%</span></p>
+                        </div>
+                        <div>
+                            <p>Disgust:<span id="disgust-percent">0%</span></p>
+                        </div>
                     </div>
                 </div> 
             </div>
         </div>
+
+        <script src="js/api.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/profile.js"></script>
+
     </body>
 </html>
