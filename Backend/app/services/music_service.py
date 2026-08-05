@@ -14,7 +14,7 @@ EMOTION_QUERY_MAP = {
     ],
 
     "sad": [ 
-        "sad songs",
+        "sad songs", "sad love songs",
         "viral sad songs",
         "Lo-fi",
         "Acoustic","official songs",
